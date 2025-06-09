@@ -42,7 +42,7 @@ const JobFormLogic = ({mode}) => {
         console.log("All fields are required")
         return
       }
-      let jobs = JSON.parse(localStorage.getItem('jobs')) || []
+      let jobs = JSON.parse(localStorage.getItem('jobs') || "[]")
   
       const newJob = {
         id : mode === "edit" ? id : jobs.length,
