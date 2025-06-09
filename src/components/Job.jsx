@@ -1,17 +1,19 @@
 import { FaSuitcase } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import {useState,useEffect,useContext} from 'react'
+import {useState,useEffect} from 'react'
+import {toast} from 'react-toastify'
 
 const Job = ({job:{id,title,date,status,type,company},setJobs}) => {
   const [translate, setTranslate] = useState(1)
 
   const handelDelete = (id)=>{
-    const jobs = JSON.parse(localStorage.getItem('jobs')) || []
+    const jobs = JSON.parse(localStorage.getItem('jobs')||'[]')
 
     const newJobs = jobs.filter((item)=> id != item.id)
     localStorage.setItem('jobs',JSON.stringify(newJobs))
     setJobs(newJobs)
+    toast.success("Job deleted successfully")
   }
 
   useEffect(()=>{

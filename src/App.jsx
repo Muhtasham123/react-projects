@@ -7,6 +7,9 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import {useState} from 'react'
 import { FaBars } from "react-icons/fa6";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
@@ -16,6 +19,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ToastContainer/>
         <Navbar/>
         <button onClick={() => { setIsOpen(true) }} className="text-lg font-bold rounded-md flex items-center justify-center md:hidden absolute mt-25 ml-5 bg-black text-blue-300 p-2">
           <FaBars />

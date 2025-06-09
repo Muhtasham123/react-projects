@@ -28,7 +28,7 @@ const Dashboard = ({setIsOpen}) => {
   
 
   useEffect(()=>{
-    const savedJobs = JSON.parse(localStorage.getItem('jobs'))
+    const savedJobs = JSON.parse(localStorage.getItem('jobs') || '[]')
     setJobs(savedJobs)
     setTranslate(0)
     setIsOpen(false)
@@ -60,7 +60,7 @@ const Dashboard = ({setIsOpen}) => {
 
         <div className = "w-full flex flex-wrap flex-col md:flex-row justify-between">
           {
-          (jobs.length == 0) ?
+          (jobs.length === 0) ?
             <h1 className = "w-full font-extrabold text-3xl text-center self-center">No saved jobs</h1>
             :
             jobs.map((job,index)=>{

@@ -2,6 +2,7 @@ import Form from "../components/Form"
 import { useRef,useEffect } from "react"
 import { useParams } from "react-router-dom"
 import {useNavigate} from 'react-router-dom'
+import { toast } from "react-toastify"
 
 const JobFormLogic = ({mode}) => {
     const titleRef = useRef()
@@ -39,7 +40,7 @@ const JobFormLogic = ({mode}) => {
          || !companyRef.current.value 
          || !statusRef.current.value 
          || !typeRef.current.value) {
-        console.log("All fields are required")
+        toast.error("All fields are required")
         return
       }
       let jobs = JSON.parse(localStorage.getItem('jobs') || "[]")
@@ -68,6 +69,7 @@ const JobFormLogic = ({mode}) => {
       dateRef.current.value = ""
       companyRef.current.value = ""
       navigate('/')
+      toast.success(`${mode === "edit" ? "Job edited successfully": "Job added successfully"}`)
     }
   return (
     <Form handleSubmit = {handleSubmit} title = {mode === "edit" ? "Edit job":"Add job"} refs = {{titleRef,dateRef,companyRef,statusRef,typeRef}}></Form>
