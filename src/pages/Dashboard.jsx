@@ -37,7 +37,7 @@ const Dashboard = ({setIsOpen}) => {
     <div className = "w-full h-full overflow-x-hidden">
       <form className={`flex flex-wrap flex-col items-center md:justify-between md:flex-row p-5 w-full bg-gradient-to-l from-gray-800 to-black rounded-lg shadow-lg mt-30 ${translate === 1 ? 'slide-x' : 'slide-none'}`}>
 
-        <div className={`m-4 ${translate === 1 ? 'slide-y' : 'slide-none'}`}>
+        <div className={` ${translate === 1 ? 'slide-y' : 'slide-none'}`}>
           <label className="text-white font-semibold text-lg">Filter by status</label><br></br>
           <select onChange = {(e)=>{handleChange(e)}} value = {status} className="input w-70" name = "status">
             <option value = "interview">interview</option>
@@ -47,7 +47,7 @@ const Dashboard = ({setIsOpen}) => {
           </select>
         </div>
 
-        <div className={`m-4 ${translate === 1 ? 'slide-y' : 'slide-none'}`}>
+        <div className={` ${translate === 1 ? 'slide-y' : 'slide-none'}`}>
           <label className="text-white font-semibold text-lg">Filter by type</label><br></br>
           <select onChange={(e) => { handleChange(e) }}  value = {type} className="input w-70" name = "type">
             <option value="full-time">full-time</option>
