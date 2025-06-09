@@ -35,7 +35,7 @@ const Dashboard = ({setIsOpen}) => {
   },[])
   return (
     <div className = "w-full h-full overflow-x-hidden">
-      <form className={`flex flex-wrap flex-col justify-between md:flex-row p-5 w-full bg-gradient-to-l from-gray-800 to-black rounded-lg shadow-lg mt-30 ${translate === 1 ? 'slide-x' : 'slide-none'}`}>
+      <form className={`flex flex-wrap flex-col items-center md:justify-between md:flex-row p-5 w-full bg-gradient-to-l from-gray-800 to-black rounded-lg shadow-lg mt-30 ${translate === 1 ? 'slide-x' : 'slide-none'}`}>
 
         <div className={`m-4 ${translate === 1 ? 'slide-y' : 'slide-none'}`}>
           <label className="text-white font-semibold text-lg">Filter by status</label><br></br>
